@@ -41,7 +41,7 @@ module.exports = {
       const posts = require('./assets/data/dev-hinanet-posts-all.json')
       return posts.map(post => {
         const date = new Date(post.date)
-        return `/${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${post.slug}`
+        return `/${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${decodeURIComponent(post.slug)}`
       })
     }
   }
