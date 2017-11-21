@@ -1,0 +1,3 @@
+[submodule "static/wp-content"]
+	path = static/wp-content
+	url = https://github.com/hinaloe/dev-hinanet-media.git
