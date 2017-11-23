@@ -1,6 +1,6 @@
 <template>
   <article class="card">
-    <div v-if="thumbnail && post.thumbnail" class="list-thumb"></div>
+    <!--<div v-if="thumbnail && post.thumbnail" class="list-thumb"></div>-->
     <div>
       {{post.title.rendered || '(no title)'}}
     </div>

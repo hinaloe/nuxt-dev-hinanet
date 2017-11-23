@@ -2,6 +2,7 @@
   <div class="container">
     <post-card :post="post"></post-card>
     <adsbygoogle ad-slot="5965062840" />
+    <page-navi :prev="this.prev" :next="this.next"/>
     <h2>こちらもオススメ</h2>
     <nuxt-link :to="r.url|trimDomain" v-for="r in post['jetpack-related-posts']" :key="r.id"><listed-post :post="{title:{rendered:r.title},date:r.date}" view="related"></listed-post></nuxt-link>
   </div>
@@ -13,6 +14,7 @@
   import URL from 'url'
 
   import striptags from 'striptags'
+  import PageNavi from '../../../../components/card/PageNavi.vue'
 
   const fetchMediaInfo = process.server ? (id) => require(`~/assets/data/media/${id}.json`) : () => {}
 
@@ -71,6 +73,7 @@
       return /^\d{4}$/.test(params.year) && /^\d{2}$/.test(params.month)
     },
     components: {
+      PageNavi,
       ListedPost,
       PostCard
     },
