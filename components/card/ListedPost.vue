@@ -1,5 +1,6 @@
 <template>
   <article class="card">
+    <div v-if="thumbnail && post.thumbnail" class="list-thumb"></div>
     <div>
       {{post.title.rendered || '(no title)'}}
     </div>
@@ -10,14 +11,17 @@
     <div class="post-meta" v-else-if="view==='related'">
       {{post.date}}
     </div>
-    <div v-if="post.excerpt && post.excerpt.rendered" v-html="post.excerpt.rendered" class="list-excerpt">
-    </div>
+    <div v-if="post.excerpt && post.excerpt.rendered" v-html="post.excerpt.rendered" class="list-excerpt"></div>
+    <span class="read-more">→ 続きを読む</span>
+
   </article>
 </template>
 <style src="~/assets/css/card.css" scoped></style>
 <style scoped>
   a:hover .card, a:active .card {
     color: #313237;
+    box-shadow: 0 10px 23px rgba(0, 0, 0, 0.23), 0 8px 8px rgba(0, 0, 0, 0.28);
+
   }
 
   .post-meta {
@@ -34,13 +38,21 @@
       display: block;
     }
   }
+
+  .read-more {
+    margin-left: .6rem;
+  }
 </style>
 <script>
   export default {
     name: 'ListedPost',
     props: {
       post: {},
-      view: {default: 'archive', type: String}
+      view: {default: 'archive', type: String},
+      thumbnail: {
+        default: false,
+        type: Boolean
+      }
     },
     computed: {
       publishedDate () {

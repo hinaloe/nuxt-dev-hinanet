@@ -1,12 +1,21 @@
 <template>
-  <article class="card">
+  <article class="card" itemscope itemtype="http://schema.org/BlogPosting">
     <h1>{{post.title.rendered}}</h1>
     <div class="post-meta">
-      published: <span itemprop="datePublished" :datetime="post.date">{{publishedDate}}</span> /
-      updated: <span itemprop="datePublished" :datetime="post.date">{{modifiedDate}}</span>
+      published: <time itemprop="datePublished" :datetime="post.date">{{publishedDate}}</time> /
+      updated: <time itemprop="dateModified" :datetime="post.date">{{modifiedDate}}</time>
+      by <img src="~/assets/img/gravatar_64.png" style="width: 20px;height: 20px;border-radius: 50%;margin-right: 5px;" /> <span itemprop="author">hinaloe</span>.
     </div>
     <div>
       <div v-html="post.content.rendered"></div>
+    </div>
+    <div class="post-footer">
+      <share-field :url="post.link" :title="post.title.rendered">
+        <share-twitter/>
+        <share-fb/>
+        <share-hateb/>
+        <share-wsapi/>
+      </share-field>
     </div>
   </article>
 </template>
@@ -18,7 +27,20 @@
   }
 </style>
 <script>
+  import ShareField from '../share/share-field.vue'
+  import ShareTwitter from '../share/share-twitter.vue'
+  import ShareWsapi from '../share/share-web-share.vue'
+  import ShareHateb from '../share/share-hateb.vue'
+  import ShareFb from '../share/share-facebook.vue'
+
   export default {
+    components: {
+      ShareFb,
+      ShareHateb,
+      ShareWsapi,
+      ShareTwitter,
+      ShareField
+    },
     props: {post: {}},
     computed: {
       publishedDate () {

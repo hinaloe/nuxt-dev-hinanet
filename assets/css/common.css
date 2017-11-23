@@ -97,4 +97,23 @@ blockquote cite {
 
 a {
     text-decoration: none;
+    color: #05a9c5;
+}
+
+@media (min-width: 350px) {
+    .adsbygoogle.infeed {
+        height: 180px;
+    }
+}
+
+@media (min-width: 500px) {
+    .adsbygoogle.infeed {
+        height: 130px;
+    }
+}
+
+@media (min-width: 800px) {
+    .adsbygoogle.infeed {
+        height: 180px;
+    }
 }
