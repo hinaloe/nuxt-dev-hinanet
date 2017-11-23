@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+"@nuxtjs/google-adsense@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-adsense/-/google-adsense-1.1.2.tgz#9487abbfe1dad762729db7748626db6001a3ab7c"
+
+"@nuxtjs/sitemap@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-0.0.3.tgz#41f5a4ab4775414cebb521ac6bdf16f6edcf2650"
+  dependencies:
+    async-cache "^1.1.0"
+    fs-extra "^4.0.0"
+    is-https "^1.0.0"
+    lodash "^4.17.4"
+    minimatch "^3.0.4"
+    pify "^3.0.0"
+    sitemap "^1.13.0"
+
 "@nuxtjs/youch@3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/youch/-/youch-3.0.2.tgz#03fff829ca45bd1c3ece84c08270f9686229dd4a"
@@ -193,6 +209,12 @@ assert@^1.1.1:
   dependencies:
     util "0.10.3"
 
+async-cache@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/async-cache/-/async-cache-1.1.0.tgz#4a9a5a89d065ec5d8e5254bd9ee96ba76c532b5a"
+  dependencies:
+    lru-cache "^4.0.0"
+
 async-each@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
@@ -240,6 +262,13 @@ aws-sign2@~0.6.0:
 aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axios@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
+  dependencies:
+    follow-redirects "^1.2.5"
+    is-buffer "^1.1.5"
 
 babel-code-frame@^6.11.0, babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -1527,7 +1556,7 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
 
-debug@2.6.9, debug@^2.2.0, debug@^2.6.8:
+debug@2.6.9, debug@^2.2.0, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -2225,6 +2254,12 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+follow-redirects@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.5.tgz#ffd3e14cbdd5eaa72f61b6368c1f68516c2a26cc"
+  dependencies:
+    debug "^2.6.9"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -2267,7 +2302,7 @@ friendly-errors-webpack-plugin@^1.6.1:
     error-stack-parser "^2.0.0"
     string-length "^1.0.1"
 
-fs-extra@^4.0.1:
+fs-extra@^4.0.0, fs-extra@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.2.tgz#f91704c53d1b461f893452b0c307d9997647ab6b"
   dependencies:
@@ -2739,6 +2774,10 @@ is-glob@^2.0.0, is-glob@^2.0.1:
   dependencies:
     is-extglob "^1.0.0"
 
+is-https@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-https/-/is-https-1.0.0.tgz#9c1dde000dc7e7288edb983bef379e498e7cb1bf"
+
 is-number@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
@@ -3040,7 +3079,7 @@ lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
-lru-cache@^4.0.1, lru-cache@^4.1.1:
+lru-cache@^4.0.0, lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.1.tgz#622e32e82488b49279114a4f9ecf45e7cd6bba55"
   dependencies:
@@ -4706,6 +4745,13 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+sitemap@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
+  dependencies:
+    underscore "^1.7.0"
+    url-join "^1.1.0"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
@@ -4877,6 +4923,10 @@ strip-eof@^1.0.0:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+striptags@2:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/striptags/-/striptags-2.2.1.tgz#4c450b708d41b8bf39cf24c49ff234fc6aabfd32"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -5070,6 +5120,10 @@ ultron@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.1.0.tgz#b07a2e6a541a815fc6a34ccd4533baec307ca864"
 
+underscore@^1.7.0:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
 uniq@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/uniq/-/uniq-1.0.1.tgz#b31c5ae8254844a3a8281541ce2b04b865a734ff"
@@ -5102,6 +5156,10 @@ unpipe@1.0.0, unpipe@~1.0.0:
 upper-case@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
+
+url-join@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
 
 url-loader@^0.5.9:
   version "0.5.9"
@@ -5179,6 +5237,10 @@ vm-browserify@0.0.4:
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
+
+vue-lazyload@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.1.4.tgz#94dbb3fcb047f147f37900c0e22ad4fd478e31c4"
 
 vue-loader@^13.0.4:
   version "13.5.0"
