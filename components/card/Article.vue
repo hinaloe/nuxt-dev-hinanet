@@ -1,10 +1,10 @@
 <template>
   <article class="card" itemscope itemtype="http://schema.org/BlogPosting">
-    <h1>{{post.title.rendered}}</h1>
+    <h1 itemprop="headline">{{post.title.rendered}}</h1>
     <div class="post-meta">
       published: <time itemprop="datePublished" :datetime="post.date">{{publishedDate}}</time> /
       updated: <time itemprop="dateModified" :datetime="post.date">{{modifiedDate}}</time>
-      by <img src="~/assets/img/gravatar_64.png" style="width: 20px;height: 20px;border-radius: 50%;margin-right: 5px;" /> <span itemprop="author">hinaloe</span>.
+      <span itemprop="author" itemtype="http://schema.org/Person" itemscope>by <img src="~/assets/img/gravatar_64.png" style="width: 20px;height: 20px;border-radius: 50%;margin-right: 5px;" itemprop="image"/> <span itemprop="name">hinaloe</span>.</span>
     </div>
     <div>
       <div v-html="post.content.rendered"></div>

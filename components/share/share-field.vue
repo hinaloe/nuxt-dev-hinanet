@@ -17,12 +17,16 @@ export default {
 }
 </script>
 <style scoped>
-  .share-wrap /deep/ .share-btn {
+  .share-wrap >>> .share-btn {
     display: inline-block;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     cursor: pointer;
     margin-right: 8px;
+  }
+
+  .share-wrap >>> .share-btn > svg {
+    vertical-align: top;
   }
 </style>
