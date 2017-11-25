@@ -67,11 +67,7 @@ module.exports = {
     { src: '~/plugins/ga.js', ssr: false }
   ],
   generate: {
-    routes: () => {
-      const r = routes()
-      r.push('404')
-      return r
-    }
+    routes: () => [].concat(routes(), '404')
   },
   sitemap: {
     path: '/sitemap.xml',
@@ -83,9 +79,12 @@ module.exports = {
 }
 
 function routes () {
-  const posts = require('./assets/data/dev-hinanet-posts-all.json')
-  return posts.map(post => {
-    const date = new Date(post.date)
-    return `/${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${decodeURIComponent(post.slug)}/`
-  })
+  const posts = require('./assets/data/dev-hinanet-posts-all.json').
+    map(post => {
+      const date = new Date(post.date)
+      return `/${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(
+        -2)}/${decodeURIComponent(post.slug)}/`
+    })
+  const yearly = ['2011', '2012', '2013', '2014', '2015']
+  return [].concat(posts, yearly)
 }
