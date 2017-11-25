@@ -57,14 +57,21 @@ module.exports = {
       'vue-lazyload',
       'striptags',
       '~/plugins/vue-lazyload'
-    ]
+    ],
+    filenames: {
+      chunk: '[id].[chunkhash].js'
+    }
   },
   plugins: [
     // '~/plugins/vue-lazyload',
     { src: '~/plugins/ga.js', ssr: false }
   ],
   generate: {
-    routes
+    routes: () => {
+      const r = routes()
+      r.push('404')
+      return r
+    }
   },
   sitemap: {
     path: '/sitemap.xml',
