@@ -67,7 +67,10 @@ module.exports = {
     { src: '~/plugins/ga.js', ssr: false }
   ],
   generate: {
-    routes: () => [].concat(routes(), '404')
+    routes: () => [].concat(routes(), '404'),
+    minify: {
+      removeOptionalTags: false
+    }
   },
   sitemap: {
     path: '/sitemap.xml',
