@@ -16,7 +16,7 @@
     "@nuxtjs/google-adsense": "^1.1.2",
     "@nuxtjs/sitemap": "^0.0.3",
     "axios": "^0.21.2",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "^3.4.3",
     "sanitize.css": "^5.0.0",
     "striptags": "3",
     "vue-lazyload": "^1.1.4"
